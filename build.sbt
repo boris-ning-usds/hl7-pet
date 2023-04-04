@@ -28,7 +28,7 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := Some("GitHub boris-ning-usds Apache Maven Packages" at "https://maven.pkg.github.com/boris-ning-usds/hl7-pet"),
+publishTo := Some("GitHub boris-ning-usds Apache Maven Packages" at "https://maven.pkg.github.com/boris-ning-usds/hl7-pet");
   
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
@@ -37,7 +37,7 @@ credentials += Credentials(
   "maven.pkg.github.com",
   "boris-ning-usds",
   System.getenv("GITHUB_TOKEN")
-),
+);
 
 publishMavenStyle := true
 
