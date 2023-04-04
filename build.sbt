@@ -1,4 +1,8 @@
-name := "HL7-PET"
+name:= "HL7-PET"
+
+githubOwner := "boris-ning-usds"
+githubRepository := "HL7-PET"
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
@@ -24,16 +28,17 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := {
-  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "/")
-}
-
-
+publishTo := Some("GitHub boris-ning-usds Apache Maven Packages" at "https://maven.pkg.github.com/boris-ning-usds/hl7-pet"),
+  
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+credentials += Credentials(
+  "GitHub Package Registry",
+  "maven.pkg.github.com",
+  "boris-ning-usds",
+  System.getenv("GITHUB_TOKEN")
+),
+
 publishMavenStyle := true
 
 
@@ -71,6 +76,3 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14
 crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true
-
-githubOwner := "boris-ning-usds"
-githubRepository := "hl7-pet"

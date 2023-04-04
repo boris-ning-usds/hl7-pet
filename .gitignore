@@ -3,9 +3,10 @@
 # Compiled class file
 *.class
 
-project/
+project/project
+project/target
 .idea/
-.bsp/
+.bsp/sbt.json
 
 # Log file
 *.log
@@ -57,3 +58,4 @@ project/plugins/project/
 .cache
 .lib/
 
+!project/plugin.sbt
