@@ -47,7 +47,7 @@ publishMavenStyle := true
 version := "1.2.7.2"
 
 //scalaVersion := "2.12.17"
-scalaVersion:= "2.13.10"
+scalaVersion:= "2.12.10"
 
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.14"
