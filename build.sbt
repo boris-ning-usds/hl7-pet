@@ -1,4 +1,8 @@
-name := "HL7-PET"
+name:= "HL7-PET"
+
+githubOwner := "boris-ning-usds"
+githubRepository := "HL7-PET"
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
@@ -71,6 +75,3 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14
 crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true
-
-githubOwner := "boris-ning-usds"
-githubRepository := "hl7-pet"
