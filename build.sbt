@@ -1,4 +1,8 @@
-name := "HL7-PET"
+name:= "HL7-PET"
+
+githubOwner := "boris-ning-usds"
+githubRepository := "HL7-PET"
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
@@ -14,7 +18,7 @@ developers := List(
     id="mcq1",
     name="Marcelo Caldas",
     email = "mcq1@cdc.com",
-    url = url ("https://github.com/cdcent/hl7-pet")
+    url = url ("https://github.com/boris-ning-usds/hl7-pet")
   )
 )
 
@@ -71,3 +75,4 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14
 crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true
+
